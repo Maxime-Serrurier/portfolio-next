@@ -6,7 +6,12 @@ type Props = {};
 
 function About({}: Props) {
   return (
-    <div className='relative flex flex-col items-center h-screen px-10 mx-auto text-center md:text-left md:flex-row max-w-7xl justify-evenly'>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.5 }}
+      className='relative flex flex-col items-center h-screen px-10 mx-auto text-center md:text-left md:flex-row max-w-7xl justify-evenly'
+    >
       <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>
         About
       </h3>
@@ -20,7 +25,24 @@ function About({}: Props) {
         viewport={{ once: true }}
         src='./profil.jpg'
       />
-    </div>
+      <div className='px-0 space-y-10 md:px-10'>
+        <h4 className='text-4xl font-semibold'>
+          Une{' '}
+          <span className='underline decoration-[#F7AB0A]/50'>
+            petite
+          </span>{' '}
+          présentation
+        </h4>
+        <p className='text-base'>
+          Je suis développeur web et je viens de Normandie. Après plus
+          de 10 ans en grande distribution, je me suis lancé dans une
+          reconversion professionnelle afin de devenir développeur
+          web. Je suis passionné par le design et la création
+          d'applications web et mobile, et l'envie d'apprendre encore
+          plus chaque jour.
+        </p>
+      </div>
+    </motion.div>
   );
 }
 
